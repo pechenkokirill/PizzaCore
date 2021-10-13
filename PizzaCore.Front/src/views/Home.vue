@@ -20,14 +20,17 @@
           </div>
         </div>
         <div class="product-grid">
-          <pizza-card/>
-          <pizza-card/>
-          <pizza-card/>
-          <pizza-card/>
-          <pizza-card/>
-          <pizza-card/>
+          <pizza-card />
+          <pizza-card />
+          <pizza-card />
+          <pizza-card />
+          <pizza-card />
+          <pizza-card />
         </div>
       </div>
+    </div>
+    <div class="section-footer">
+      <br v-for="o in 20" :key="o"/>
     </div>
   </div>
 </template>
@@ -35,7 +38,7 @@
 <script>
 import BillboardCarousel from "../components/BillboardCarousel.vue";
 import HorizontalList from "../components/HorizontalList.vue";
-import PizzaCard from '../components/PizzaCard.vue';
+import PizzaCard from "../components/PizzaCard.vue";
 import StockCarousel from "../components/StockCarousel.vue";
 
 export default {
@@ -55,19 +58,23 @@ export default {
     flex-direction: column;
   }
 
-  .header
-  {
+  .header {
     text-align: center;
   }
 }
 
-#sort > div
-{
-    white-space: nowrap;
+#sort > div {
+  white-space: nowrap;
 }
 
 .section-products > .flex {
   justify-content: space-between;
+}
+
+.section-footer {
+  padding: 32px;
+  margin-top: 24px;
+  background: rgb(26, 26, 26);
 }
 
 .product-grid {

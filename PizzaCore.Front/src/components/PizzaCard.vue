@@ -2,12 +2,15 @@
   <div class="product-card">
     <div class="product-image">
       <img
+        class="img-lazy"
+        @load="onImgLoad"
         src="https://images.dominos.by/media/dominos/osg/api/2018/09/12/carbonara.png"
         alt=""
+        loading="lazy"
       />
     </div>
     <div class="product-desc">
-      <div><h3>Name goes here</h3></div>
+      <div class="product-name"><h3>Name goes here</h3><span class="product-postfix"></span></div>
       <div></div>
       <div style="color: gray">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa
@@ -30,10 +33,31 @@
 <script>
 import CustomSelect from './CustomSelect.vue';
 export default {
-  components: { CustomSelect },};
+  data()
+  {
+    return {
+      imgLoaded: false,
+    }
+  },
+  methods:
+  {
+    onImgLoad(e)
+    {
+      e.target.classList.add("img-lazy-loaded");
+    }
+  },
+  components: { CustomSelect },
+  };
 </script>
 
 <style>
+
+.product-name
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .product-card #product-card-btn
 {
@@ -80,7 +104,7 @@ export default {
   margin: 0px 8px 16px;
   width: calc(25% - 16px);
   box-shadow: 0 4px 10px rgb(63 93 138 / 10%);
-  transition: 250ms;
+  transition: box-shadow 250ms, transform 250ms;
 }
 
 .product-card div

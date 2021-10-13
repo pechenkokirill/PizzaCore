@@ -14,7 +14,8 @@
 <style>
     .nav
     {
-        background: black;
+        background: rgb(26, 26, 26);
+        box-shadow: 0 4px 10px rgb(63 93 138 / 50%);
         padding: 32px;
     }
 

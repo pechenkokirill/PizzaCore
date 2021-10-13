@@ -17,6 +17,17 @@ export default {
 
 <style>
 
+.img-lazy
+{
+  opacity: 0;
+  transition: opacity 250ms ease-out;
+}
+
+.img-lazy-loaded
+{
+  opacity: 1;
+}
+
 @font-face {
   font-family: 'Meter';
   src: url(../public/fonts/Maler.ttf);
