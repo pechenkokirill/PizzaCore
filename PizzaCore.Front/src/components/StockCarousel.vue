@@ -40,7 +40,7 @@ export default {
            }
        },
        settings: {
-           itemsToShow: 1.1
+           itemsToShow: 1
        },
        currentSlide: undefined 
     }),
@@ -59,8 +59,8 @@ export default {
 }
 
 #stock-carousel {
-  margin-left: 32px;
-  margin-right: 32px;
+  margin-left: 1px;
+  margin-right: 1px;
 }
 
 #billboard .carousel__item > img {

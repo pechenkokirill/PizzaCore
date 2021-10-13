@@ -32,8 +32,8 @@ export default {
     margin-left: auto;
     margin-right: auto;
     max-width: 1366px;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 .btn
