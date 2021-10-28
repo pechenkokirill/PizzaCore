@@ -16,16 +16,16 @@
           </div>
           <div id="sort" class="flex">
             <div>Сортировать по:</div>
-            <horizontal-list :list="['популярности', 'категории']" />
+            <horizontal-list :list="['популярности', 'категории']"/>
           </div>
         </div>
         <div class="product-grid">
-          <pizza-card />
-          <pizza-card />
-          <pizza-card />
-          <pizza-card />
-          <pizza-card />
-          <pizza-card />
+          <pizza-card v-for="(product, index) in products" :key="index" 
+          :name="product.name" 
+          :composition="product.composition"
+          :postfix="product.postfix"
+          :cost="product.cost"
+          />
         </div>
       </div>
     </div>
@@ -49,6 +49,22 @@ export default {
     HorizontalList,
     PizzaCard,
   },
+  data: function()
+  {
+    return {
+      products: [
+        {
+          name: 'Name goes here',
+          composition: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque deleniti magni animi atque accusantium voluptate, veniam ipsa perspiciatis ullam harum.',
+          postfix: '',
+          cost: '25.99 руб.'
+        },
+      ]
+    };
+  },
+  methods:
+  {
+  }
 };
 </script>
 

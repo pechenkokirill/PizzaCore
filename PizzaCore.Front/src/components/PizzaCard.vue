@@ -10,20 +10,17 @@
       />
     </div>
     <div class="product-desc">
-      <div class="product-name"><h3>Name goes here</h3><span class="product-postfix"></span></div>
+      <div class="product-name"><h3>{{ name }}</h3><span class="product-postfix">{{ postfix }}</span></div>
       <div></div>
-      <div style="color: gray">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa
-        accusamus quisquam reprehenderit eveniet veritatis fugiat, error, esse
-        dignissimos aliquid a eum tempore qui natus laudantium ad, mollitia ut
-        aut dolor?
+      <div class="product-composition">
+        {{ composition }}
       </div>
       <div class="product-mods">
           <custom-select/>
           <custom-select/>
       </div>
       <div>
-            <div>25.99 руб.</div>
+            <div>{{ cost }}</div>
             <button class="btn" id="product-card-btn">В корзину</button>
       </div>
     </div>
@@ -33,6 +30,7 @@
 <script>
 import CustomSelect from './CustomSelect.vue';
 export default {
+  props: [ 'name', 'postfix', 'composition', 'cost' ],
   data()
   {
     return {
@@ -52,6 +50,15 @@ export default {
 
 <style>
 
+.product-postfix
+{
+  margin-left: 4px;
+  font-size: 11px;
+  font-weight: bold;
+  color: red;
+  text-transform: uppercase;
+}
+
 .product-name
 {
   display: flex;
@@ -68,6 +75,12 @@ export default {
 {
     margin-top: 16px;
     display: flex;
+}
+
+.product-composition
+{
+  color: gray;
+  height: 100%;
 }
 
 .product-mods > div:first-child
@@ -132,5 +145,6 @@ export default {
   display: flex;
   text-align: center;
   flex-direction: column;
+  height: 100%;
 }
 </style>
