@@ -1,10 +1,11 @@
-<template>
+s<template>
   <carousel
     id="billboard"
     :autoplay="3000"
     :wrapAround="true"
     :settings="settings"
     :breakpoints="breakpoints"
+    :pauseAutoplayOnHover="true"
     v-model="currentSlide"
   >
     <slide v-for="slide in 10" :key="slide">
@@ -12,12 +13,15 @@
         <img src="../../public/img/carusel1.png" style="width: 100%" alt="" />
       </div>
     </slide>
+    <template #addons>
+      <pagination />
+    </template>
   </carousel>
 </template>
 
 <script>
-import { Carousel, Slide } from "vue3-carousel";
-import "vue3-carousel/dist/carousel.css";
+import { Carousel, Slide, Pagination } from "vue3-carousel";
+import "../../public/styles/custom_carousel.css";
 
 export default {
   name: "BillboardCarousel",
@@ -38,6 +42,7 @@ export default {
   components: {
     Carousel,
     Slide,
+    Pagination
   },
 };
 </script>

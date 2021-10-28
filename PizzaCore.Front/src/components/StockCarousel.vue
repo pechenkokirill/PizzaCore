@@ -5,6 +5,7 @@
     :wrapAround="true"
     :settings="settings"
     :breakpoints="breakpoints"
+    :pauseAutoplayOnHover="true"
     v-model="currentSlide"
   >
     <slide v-for="slide in 5" :key="slide">
@@ -24,7 +25,8 @@
 <script>
 import { Carousel, Slide, Pagination } from "vue3-carousel";
 import Stock from "../components/Stock.vue";
-import 'vue3-carousel/dist/carousel.css';
+import "../../public/styles/custom_carousel.css";
+
 export default {
     mounted()
     {
